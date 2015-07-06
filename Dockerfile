@@ -10,6 +10,18 @@ RUN apt-get update && \
         git-core \
         supervisor
 
+# Install Nginx
+RUN apt-key adv --keyserver pgp.mit.edu --recv-keys 573BFD6B3D8FBC641079A6ABABF5BD827BD9BF62
+RUN echo "deb http://nginx.org/packages/mainline/debian/ wheezy nginx" >> /etc/apt/sources.list
+
+RUN apt-get update && \
+    apt-get install -y nginx
+
+ADD nginx/default.conf /etc/nginx/conf.d/default.conf
+
+# Add user 'nginx' to administrators
+RUN usermod -u 1000 nginx
+
 # Install php-fpm
 RUN apt-get update && \
     apt-get install -y \
