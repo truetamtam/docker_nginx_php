@@ -10,6 +10,7 @@ RUN apt-get update && \
         git-core \
         supervisor
 
+# Install php-fpm
 RUN apt-get update && \
     apt-get install -y \
         php5-cli \
@@ -20,3 +21,20 @@ RUN apt-get update && \
         php5-mcrypt \
         php5-mysql
 
+# php-fpm config
+ADD php/www.conf /etc/php5/fpm/pool.d/www.conf
+
+# Install composer
+curl -sS https://getcomposer.org/installer | php && \
+    mv composer.phar /usr/local/bin/composer
+
+# Add running sh on start
+ADD run.sh /run.sh
+RUN chmod 755 /*.sh
+
+# Setup public folder
+ADD app /app
+
+EXPOSE 80
+WORKDIR /app
+CMD ["/run.sh"]
