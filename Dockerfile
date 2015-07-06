@@ -25,7 +25,7 @@ RUN apt-get update && \
 ADD php/www.conf /etc/php5/fpm/pool.d/www.conf
 
 # Install composer
-curl -sS https://getcomposer.org/installer | php && \
+RUN curl -sS https://getcomposer.org/installer | php && \
     mv composer.phar /usr/local/bin/composer
 
 # Add running sh on start
