@@ -19,7 +19,8 @@ ADD supervisor/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 RUN apt-get update && \
     apt-get install -y nginx-full
 
-ADD nginx/default.conf /etc/nginx/conf.d/default.conf
+# ADD nginx/default.conf /etc/nginx/conf.d/default.conf - del
+ADD nginx/default.conf /etc/nginx/sites-enabled/default
 
 # Add user 'nginx' to administrators
 RUN usermod -u 1000 www-data
