@@ -13,11 +13,11 @@ RUN apt-get update && \
 ADD supervisor/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 # Install Nginx
-RUN apt-key adv --keyserver pgp.mit.edu --recv-keys 573BFD6B3D8FBC641079A6ABABF5BD827BD9BF62
-RUN echo "deb http://nginx.org/packages/mainline/debian/ wheezy nginx" >> /etc/apt/sources.list
+#RUN apt-key adv --keyserver pgp.mit.edu --recv-keys 573BFD6B3D8FBC641079A6ABABF5BD827BD9BF62
+#RUN echo "deb http://nginx.org/packages/mainline/debian/ wheezy nginx" >> /etc/apt/sources.list
 
 RUN apt-get update && \
-    apt-get install -y nginx
+    apt-get install -y nginx-full
 
 ADD nginx/default.conf /etc/nginx/conf.d/default.conf
 
