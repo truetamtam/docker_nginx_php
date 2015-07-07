@@ -1,0 +1,18 @@
+web:
+  image: docker_nginx_php
+  buld: .
+  ports:
+    - "8000:80"
+  volumes:
+    - ./app/:/app
+  links:
+    - db
+
+db:
+  image: sameersbn/mysql
+  volumes:
+   - /var/lib/mysql
+  environment:
+   - DB_NAME=demo
+   - DB_USER=demo
+   - DB_PASS=demo
