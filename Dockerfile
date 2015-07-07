@@ -22,7 +22,7 @@ RUN apt-get update && \
 ADD nginx/default.conf /etc/nginx/conf.d/default.conf
 
 # Add user 'nginx' to administrators
-RUN usermod -u 1000 nginx
+RUN usermod -u 1000 www-data
 
 # Install php-fpm
 RUN apt-get update && \
