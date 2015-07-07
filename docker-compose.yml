@@ -4,6 +4,7 @@ web:
     - "8000:80"
   volumes:
     - ./app/:/app
+    - ./nginx/default.conf:/etc/nginx/sites-available/vhost.conf
   links:
     - db
 
