@@ -4,7 +4,7 @@ web:
     - "8000:80"
   volumes:
     - ./app/:/app
-    - ./nginx/:/etc/nginx/sites-available
+    - ./nginx/:/etc/nginx/sites-enabled
   links:
     - db
 
