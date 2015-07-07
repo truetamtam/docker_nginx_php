@@ -1,6 +1,6 @@
 web:
   image: docker_nginx_php
-  buld: .
+  build: .
   ports:
     - "8000:80"
   volumes:
