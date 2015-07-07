@@ -1,5 +1,4 @@
 web:
-  image: docker_nginx_php
   build: .
   ports:
     - "8000:80"
