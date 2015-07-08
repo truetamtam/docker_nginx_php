@@ -7,6 +7,8 @@ RUN apt-get update && \
     apt-get install -y \
         curl \
         wget \
+        apt-utils \
+        dialog \
         vim \
         git-core \
         supervisor
