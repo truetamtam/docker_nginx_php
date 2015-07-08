@@ -6,9 +6,9 @@ web:
     - ./app/:/app
     - ./nginx/:/etc/nginx/sites-enabled
   links:
-    - db
+    - localhost
 
-db:
+localhost:
   image: sameersbn/mysql
   volumes:
    - /var/lib/mysql
