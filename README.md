@@ -1,2 +1,2 @@
 ---
-Docker Debian Nginx PHP
+Docker Debian Nginx PHP & docker composer
